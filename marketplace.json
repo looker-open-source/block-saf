@@ -16,18 +16,21 @@
     },
     "CONFIG_PROJECT_NAME": {
       "label": "Config Project Name"
+    },
+    "TRANSCRIPT_TABLE_NAME": {
+    "label": "Transcript Table Name"
     }
   },
   "models": [
     {
-      "name": "block_dialogflow",
+      "name": "block_saf",
       "connection_constant": "CONNECTION_NAME"
     }
   ],
   "auxiliary_projects": [
     {
-      "git_uri": "git://github.com/looker/block-dialogflow-config.git",
-      "git_ref": "",
+      "git_uri": "git://github.com/looker/block-saf-config.git",
+      "git_ref": "563151e2e9897f51abf8a50071f4ea0dc5a6dbe1",
       "label": "Speech Analysis Framework Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }
