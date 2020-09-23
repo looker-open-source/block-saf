@@ -84,13 +84,13 @@
     model: block_saf
     explore: transcripts
     type: looker_line
-    fields: [transcripts__sentences.sentence, transcripts__sentences.total_score,
-      transcripts__sentences.sentence_number]
-    sorts: [transcripts__sentences.sentence_number]
+    fields: [transcript_sentences.sentence, transcript_sentences.total_score,
+      transcript_sentences.sentence_number]
+    sorts: [transcript_sentences.sentence_number]
     limit: 500
     column_limit: 50
     dynamic_fields: [{table_calculation: cumulative_sentiment_score, label: Cumulative
-          Sentiment Score, expression: 'running_total(${transcripts__sentences.total_score})',
+          Sentiment Score, expression: 'running_total(${transcript_sentences.total_score})',
         value_format: !!null '', value_format_name: decimal_1, _kind_hint: measure,
         _type_hint: number}]
     x_axis_gridlines: false
@@ -119,7 +119,7 @@
     y_axis_combined: true
     show_null_points: true
     interpolation: linear
-    hidden_fields: [transcripts__sentences.total_score, transcripts__sentences.sentence_number]
+    hidden_fields: [transcript_sentences.total_score, transcript_sentences.sentence_number]
     listen:
       File ID: transcripts.fileid
     row: 3
@@ -138,7 +138,7 @@
     model: block_saf
     explore: transcripts
     type: single_value
-    fields: [transcripts__sentences.total_score]
+    fields: [transcript_sentences.total_score]
     limit: 500
     custom_color_enabled: true
     show_single_value_title: true
@@ -194,8 +194,8 @@
     model: block_saf
     explore: transcripts
     type: looker_bar
-    fields: [transcripts__sentences.count_sentences, transcripts__sentences.score_tier]
-    fill_fields: [transcripts__sentences.score_tier]
+    fields: [transcript_sentences.count_sentences, transcript_sentences.score_tier]
+    fill_fields: [transcript_sentences.score_tier]
     limit: 500
     series_types: {}
     listen:
@@ -209,7 +209,7 @@
     model: block_saf
     explore: transcripts
     type: looker_wordcloud
-    fields: [transcripts__entities.name, transcripts.count]
+    fields: [transcript_entities.name, transcripts.count]
     sorts: [transcripts.count desc]
     limit: 15
     column_limit: 50
