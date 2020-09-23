@@ -8,7 +8,7 @@ view: transcript_entities {
 ###################################################
 
 view: transcript_entities_core {
-  sql_table_name: @{DATASET_NAME}.insights_data_* ;;
+  sql_table_name: `@{DATASET_NAME}.@{TRANSCRIPT_TABLE_NAME}_*` ;;
 
   dimension: name {
     type: string

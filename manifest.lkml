@@ -1,10 +1,10 @@
-project_name: "block-dialogflow"
+project_name: "block-saf"
 
 
 ################ Constants ################
 
 constant: CONFIG_PROJECT_NAME {
-  value: "block-dialogflow-config"
+  value: "block-saf-config"
   export: override_required
 }
 

@@ -2,13 +2,13 @@ include: "//@{CONFIG_PROJECT_NAME}/views/transcript_words.view.lkml"
 
 
 view: transcript_words {
-  extends: [transcripts_words_config]
+  extends: [transcript_words_config]
 }
 
 ###################################################
 
 view: transcript_words_core {
-  sql_table_name: @{DATASET_NAME}.insights_data_* ;;
+  sql_table_name: `@{DATASET_NAME}.@{TRANSCRIPT_TABLE_NAME}_*` ;;
 
     dimension: confidence {
       type: number

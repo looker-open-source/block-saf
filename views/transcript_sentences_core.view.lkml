@@ -8,7 +8,7 @@ view: transcript_sentences {
 ###################################################
 
 view: transcript_sentences_core {
-  sql_table_name: @{DATASET_NAME}.insights_data_* ;;
+  sql_table_name: `@{DATASET_NAME}.@{TRANSCRIPT_TABLE_NAME}_*` ;;
 
   dimension: end_offset_seconds {
     type: number

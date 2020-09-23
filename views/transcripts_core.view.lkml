@@ -8,7 +8,7 @@ view: transcripts {
 ###################################################
 
 view: transcripts_core {
-  sql_table_name: @{DATASET_NAME}.insights_data_* ;;
+  sql_table_name: `@{DATASET_NAME}.@{TRANSCRIPT_TABLE_NAME}_*` ;;
 
   set: drill_fields {
     fields: [call_date, conversation_name, audio_file_uri, agentid,duration,client_sentiment_score]
