@@ -4,7 +4,7 @@
   elements:
   - title: Call Transcript
     name: Call Transcript
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     type: looker_grid
     fields: [transcripts.transcript]
@@ -38,7 +38,7 @@
     height: 8
   - title: Call Info
     name: Call Info
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     type: looker_single_record
     fields: [transcripts.agentid, transcripts.call_date]
@@ -54,7 +54,7 @@
     height: 3
   - title: Total Call Duration Seconds
     name: Total Call Duration Seconds
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     type: single_value
     fields: [transcripts.total_duration]
@@ -81,7 +81,7 @@
     height: 3
   - title: Conversation Trend
     name: Conversation Trend
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     type: looker_line
     fields: [transcripts__sentences.sentence, transcripts__sentences.total_score,
@@ -135,7 +135,7 @@
     height: 9
   - title: Total Sentiment Score
     name: Total Sentiment Score
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     type: single_value
     fields: [transcripts__sentences.total_score]
@@ -163,7 +163,7 @@
     height: 3
   - title: Silence Percent
     name: Silence Percent
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     type: single_value
     fields: [transcripts.average_silence_percent]
@@ -191,7 +191,7 @@
     height: 3
   - title: Sentence Score Breakdown
     name: Sentence Score Breakdown
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     type: looker_bar
     fields: [transcripts__sentences.count_sentences, transcripts__sentences.score_tier]
@@ -206,7 +206,7 @@
     height: 9
   - title: Common Entities
     name: Common Entities
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     type: looker_wordcloud
     fields: [transcripts__entities.name, transcripts.count]
@@ -252,7 +252,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: call_demo_home
+    model: block_dialogflow
     explore: transcripts
     listens_to_filters: []
     field: transcripts.fileid

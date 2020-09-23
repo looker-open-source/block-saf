@@ -1,14 +1,14 @@
-include: "//@{CONFIG_PROJECT_NAME}/transcripts_words.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/views/transcript_words.view.lkml"
 
 
-view: transcripts_words {
+view: transcript_words {
   extends: [transcripts_words_config]
 }
 
 ###################################################
 
-view: transcripts_words_core {
-  sql_table_name: @{DATASET_NAME}.insights_data_20200827 ;;
+view: transcript_words_core {
+  sql_table_name: @{DATASET_NAME}.insights_data_* ;;
 
     dimension: confidence {
       type: number

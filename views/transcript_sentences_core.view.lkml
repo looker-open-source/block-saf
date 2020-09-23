@@ -1,14 +1,14 @@
-include: "//@{CONFIG_PROJECT_NAME}/transcripts_sentences.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/views/transcript_sentences.view.lkml"
 
 
-view: transcripts_sentences {
-  extends: [transcripts_sentences_config]
+view: transcript_sentences {
+  extends: [transcript_sentences_config]
 }
 
 ###################################################
 
-view: transcripts_sentences_core {
-  sql_table_name: @{DATASET_NAME}.insights_data_20200827 ;;
+view: transcript_sentences_core {
+  sql_table_name: @{DATASET_NAME}.insights_data_* ;;
 
   dimension: end_offset_seconds {
     type: number

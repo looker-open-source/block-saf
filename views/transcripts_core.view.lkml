@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/transcripts.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/views/transcripts.view.lkml"
 
 
 view: transcripts {
@@ -8,7 +8,7 @@ view: transcripts {
 ###################################################
 
 view: transcripts_core {
-  sql_table_name: @{DATASET_NAME}.insights_data_20200827 ;;
+  sql_table_name: @{DATASET_NAME}.insights_data_* ;;
 
   set: drill_fields {
     fields: [call_date, conversation_name, audio_file_uri, agentid,duration,client_sentiment_score]

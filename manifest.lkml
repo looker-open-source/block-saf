@@ -18,6 +18,11 @@ constant: DATASET_NAME {
   export: override_required
 }
 
+constant: TRANSCRIPT_TABLE_NAME {
+  value: "insights_data"
+  export: override_required
+}
+
 ################ Dependencies ################
 
 
@@ -26,5 +31,8 @@ local_dependency: {
 
   override_constant: DATASET_NAME {
     value: "@{DATASET_NAME}"
+  }
+  override_constant: TRANSCRIPT_TABLE_NAME {
+    value: "@{TRANSCRIPT_TABLE_NAME}"
   }
 }

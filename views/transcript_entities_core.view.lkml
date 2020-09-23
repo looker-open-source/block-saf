@@ -1,14 +1,14 @@
-include: "//@{CONFIG_PROJECT_NAME}/transcripts_entities.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/views/transcript_entities.view.lkml"
 
 
-view: transcripts_entities {
-  extends: [transcripts_entities_config]
+view: transcript_entities {
+  extends: [transcript_entities_config]
 }
 
 ###################################################
 
-view: transcripts_entities_core {
-  sql_table_name: @{DATASET_NAME}.insights_data_20200827 ;;
+view: transcript_entities_core {
+  sql_table_name: @{DATASET_NAME}.insights_data_* ;;
 
   dimension: name {
     type: string
