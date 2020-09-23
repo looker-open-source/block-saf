@@ -2,48 +2,40 @@
 
 ### What does this Block do for me?
 
-**(1) Analyze DialogFlow Efficiency** - Provides visibility into DialogFlow application performance so that you can identify the frequency and type of user queries that are being resolved inefficiently and remediate those interactions accordingly.
+**(1) Analyze Transcribed Audio** - Analyze metrics such as call sentiment, call volume, and call length on the entire set of transcribed calls to get a holistic view of call performance.
 
-**(2) Understand User Behavior** - Provides insight into the topics that users most frequently ask questions about, the nature of how their questions are phrased, and their satisfaction with answers so that you can fine-tune your interactions to maximize customer satisfaction.
+**(2) Understand Agent/Caller interactions** - Glean insights from speech patterns between callers and agents to understand agent performance and remediate issues.
+
+**(3) Analyze Individual Calls** - Drill down into single call logs to understand details and verify accuracy of transcription.
+
 
 ### Block Info
 
-This block is modeled on the DialogFlow schema. Each record is parsed to extract the content as well as metadata of a human interaction with the bot. For telephonic interactions, additional metadata, such as the Area Code and Trace are extracted.
+This block is modeled on the Speech Analysis Framework schema. Each call is parsed to extract the metadata as well as the transcript of the audio between the caller and the agent.
 
-### DialogFlow Raw Data Structure
+### Speech Analytics Framework Raw Data Structure
 
-Human interactions with the bot are initially extracted as a payload, which can be converted into a JSON format. Each payload contains all the information about that chat.
+Call audio data is initially extracted as a payload, which can be converted into a JSON format. Each payload contains all the information about that call, including the full transcript.
 
 ### DialogFlow Block Structure
 
-The DialogFlow block consists of an Explore with three underlying views.
+The SAF block consists of an Explore with three underlying views.
 
-**(1) Parsed Transcripts View**
+**(1) Transcripts View**
 
-This view creates a Persistent Derived Table which extracts all the data about an interaction from the DialogFlow payload into a JSON object. That JSON is then parsed to extract the content, as well as characteristics, of that interaction, which form the dimensions and measures of the view.
+This view defines dimensions and measures for the raw data in the transcripts table. It also defines dimensions and measures for the data in the unnested fields for words, entities, and sentences.
 
-**(2) Session Facts View**
-
-The session_id associated with an interaction is part of the DialogFlow payload. In order to understand the context of the session in which an interaction occurred, a Persistent Derived Table is created that captures the characteristic of that session, such as its start and end time as well as the overall session duration.
-
-**(3) Parameters View**
+**(3) Block SAF Model**
 
 This view is used to define any custom variables as well as their values that are logged as part of a specific DialogFlow deployment.
 
 ### Implementation Instructions / Required Customizations
 
-**(1) Schema and Table Name in parsed_transcripts View**
+**(1) Table Name in the Manifest File**
 
-On line 82 of the parsed_transcripts view file, you'll need to replace the schema and table name in the FROM statement to reflect the schema and table names for where the DialogFlow transcripts are stored.
+In the manifest file, you’ll need to input the connection and the table name in which the Speech Analysis Framework transcripts are stored.
 
-**(2) Custom Variables**
 
-Within the parameters_view, you'll need to add any custom dimensions that you'd like to track with a dimension declaration. An example that extracts the custom dimension country from a parameter called 'geo-country' is shown below:
-
-dimension: country {
-  type: string
-  sql: (SELECT json_extract_scalar(parameters, '$.value.string_value') from UNNEST([${TABLE}]) WHERE ${key} = 'geo-country');;
-}
 
 ### What if I find an error? Suggestions for improvements?
 
