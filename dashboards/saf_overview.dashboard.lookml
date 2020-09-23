@@ -183,9 +183,9 @@
     model: block_saf
     explore: transcripts
     type: looker_wordcloud
-    fields: [transcripts.total_call_volume, transcripts__entities.name]
+    fields: [transcripts.total_call_volume, transcript_entities.name]
     filters:
-      transcripts__entities.name: "-%Blue%,-%^ name%,-%bye-bye%"
+      transcript_entities.name: "-%Blue%,-%^ name%,-%bye-bye%"
     sorts: [transcripts.total_call_volume desc]
     limit: 10
     column_limit: 50

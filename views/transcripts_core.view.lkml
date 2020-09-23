@@ -135,7 +135,7 @@ view: transcripts_core {
     type: string
     link: {
       label: "See Full Call Information"
-      url: "https://contactcenterai.cloud.looker.com/dashboards-next/31?File%20ID={{ value | encode_url }}"
+      url: "/dashboards/block_saf::single_call_log?File%20ID={{ value | encode_url }}"
     }
     sql: ${TABLE}.audiofileuri ;;
   }
