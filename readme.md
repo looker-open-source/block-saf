@@ -17,13 +17,13 @@ This block is modeled on the Speech Analysis Framework schema. Each call is pars
 
 Call audio data is initially extracted as a payload, which can be converted into a JSON format. Each payload contains all the information about that call, including the full transcript.
 
-### DialogFlow Block Structure
+### Speech Analytics Framework Block Structure
 
 The SAF block consists of an Explore with three underlying views.
 
-**(1) Transcripts View**
+**(1) Transcript Views**
 
-This view defines dimensions and measures for the raw data in the transcripts table. It also defines dimensions and measures for the data in the unnested fields for words, entities, and sentences.
+These views define dimensions and measures for the raw data in the transcript tables. It also defines dimensions and measures for the data in the unnested fields for words, entities, and sentences.
 
 **(3) Block SAF Model**
 
