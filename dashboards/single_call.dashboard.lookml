@@ -1,6 +1,7 @@
 - dashboard: single_call_log
   title: Single Call Log
   layout: newspaper
+  preferred_viewer: dashboards
   elements:
   - title: Call Transcript
     name: Call Transcript
@@ -246,7 +247,7 @@
   - name: File ID
     title: File ID
     type: field_filter
-    default_value: k327mjuj
+    default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:

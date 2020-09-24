@@ -12,6 +12,7 @@ explore: transcripts {
 }
 
 explore: transcripts_core {
+  label: "Speech Analytics Framework"
   extension: required
   sql_always_where: ${duration} is not null ;;
   join: transcript_words {
