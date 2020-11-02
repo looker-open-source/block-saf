@@ -8,7 +8,7 @@ view: transcript_words {
 ###################################################
 
 view: transcript_words_core {
-  sql_table_name: `@{DATASET_NAME}.@{TRANSCRIPT_TABLE_NAME}_*` ;;
+  sql_table_name: `@{DATASET_NAME}.@{TRANSCRIPT_TABLE_NAME}` ;;
 
     dimension: confidence {
       type: number
