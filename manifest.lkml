@@ -19,7 +19,7 @@ constant: DATASET_NAME {
 }
 
 constant: TRANSCRIPT_TABLE_NAME {
-  value: "insights_data"
+  value: "insights_data_*"
   export: override_required
 }
 

@@ -8,7 +8,7 @@ view: transcripts {
 ###################################################
 
 view: transcripts_core {
-  sql_table_name: `@{DATASET_NAME}.@{TRANSCRIPT_TABLE_NAME}_*` ;;
+  sql_table_name: `@{DATASET_NAME}.@{TRANSCRIPT_TABLE_NAME}` ;;
 
   set: drill_fields {
     fields: [call_date, conversation_name, audio_file_uri, agentid,duration,client_sentiment_score]
@@ -81,7 +81,7 @@ view: transcripts_core {
 
   measure: average_agent_speaking_percentage {
     type: number
-    sql: 1.0 * ${total_agent_speaking} / ${total_duration};;
+    sql: 1.0 * ${total_agent_speaking} / NULLIF(${total_duration}, 0);;
     value_format_name: percent_1
     drill_fields: [drill_fields*]
   }
@@ -94,7 +94,7 @@ view: transcripts_core {
 
   measure: average_client_speaking_percentage {
     type: number
-    sql: 1.0 * ${total_client_speaking} / ${total_duration};;
+    sql: 1.0 * ${total_client_speaking} / NULLIF(${total_duration}, 0);;
     value_format_name: percent_1
   }
 
