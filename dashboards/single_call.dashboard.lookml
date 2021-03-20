@@ -1,7 +1,7 @@
 - dashboard: single_call_log
   title: Single Call Log
   layout: newspaper
-  preferred_viewer: dashboards
+  preferred_viewer: dashboards-next
   elements:
   - title: Call Transcript
     name: Call Transcript
