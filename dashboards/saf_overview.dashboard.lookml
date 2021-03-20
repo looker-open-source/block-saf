@@ -1,7 +1,7 @@
 - dashboard: saf_overview
   title: SAF Overview
   layout: newspaper
-  preferred_viewer: dashboards
+  preferred_viewer: dashboards-next
   elements:
   - title: Call Sentiment
     name: Call Sentiment
